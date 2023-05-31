@@ -1,22 +1,12 @@
-import { useEffect, useState } from "react";
-import ImageShow from "./ImageShow";
+import './ImageList.css';
+import ImageShow from './ImageShow';
 
-function ImageList({ data }) {
-  const [images, setImages] = useState([]);
+function ImageList({ images }) {
+  const renderedImages = images.map((image) => {
+    return <ImageShow key={image.id} image={image} />;
+  });
 
-  useEffect(() => {
-    if (data) {
-      setImages(data.map((img) => img.urls.small));
-    }
-  }, [data]);
-
-  return (
-    <div>
-      {images.map((img, index) => (
-        <ImageShow key={index} img={img} />
-      ))}
-    </div>
-  );
+  return <div className="image-list">{renderedImages}</div>;
 }
 
 export default ImageList;

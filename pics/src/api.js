@@ -1,9 +1,9 @@
-import axios from "axios";
+import axios from 'axios';
 
-const searchImage = async (term) => {
-  const response = await axios.get("https://api.unsplash.com/search/photos", {
+const searchImages = async (term) => {
+  const response = await axios.get('https://api.unsplash.com/search/photos', {
     headers: {
-      Authorization: "Client-ID 1hkkh-EBIoj188musCMXNlW3a-lfnpjiDAQaMn9MvwE",
+      Authorization: 'Client-ID 8O50V7bNzfKdVixwS9W9nZVdr0VnrCv9gmeimfdvp6Y',
     },
     params: {
       query: term,
@@ -13,4 +13,4 @@ const searchImage = async (term) => {
   return response.data.results;
 };
 
-export default searchImage;
+export default searchImages;
