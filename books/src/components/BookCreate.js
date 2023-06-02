@@ -1,25 +1,25 @@
 import { useState } from "react";
 
 function BookCreate({ onCreate }) {
-  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
 
-  const handleCreate = (e) => {
-    e.preventDefault();
-    onCreate(name);
-    setName("");
+  const handleChange = (event) => {
+    setTitle(event.target.value);
   };
 
-  const handleChange = (e) => {
-    setName(e.target.value);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onCreate(title);
+    setTitle("");
   };
 
   return (
     <div className="book-create">
-      <h3>Add a book</h3>
-      <form onSubmit={handleCreate}>
+      <h3>Add a Book</h3>
+      <form onSubmit={handleSubmit}>
         <label>Title</label>
-        <input className="input" onChange={handleChange} value={name} />
-        <button className="button">Create</button>
+        <input className="input" value={title} onChange={handleChange} />
+        <button className="button">Create!</button>
       </form>
     </div>
   );
