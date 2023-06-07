@@ -2,9 +2,10 @@ import Link from "./Link";
 
 function Sidebar() {
   const links = [
+    { label: "dropdown", path: "/" },
+    { label: "modal", path: "/modal" },
     { label: "button", path: "/button" },
     { label: "accordion", path: "/accordion" },
-    { label: "dropdown", path: "/" },
   ];
 
   const renderedLinks = links.map((link) => {
